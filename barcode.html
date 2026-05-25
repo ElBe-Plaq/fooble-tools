@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <!-- META -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-title" content="Fooble Barcode Generator"/>
+    <meta name="author" content="Fooble"/>
+    <meta http-equiv="content-language" content="en"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="revisit-after" content="2 days"/>
+
+    <link href="assets/css/common/fonts.css" rel="stylesheet"/>
+    <link href="assets/css/common/reset.css" rel="stylesheet"/>
+    <link href="assets/css/barcode.css" rel="stylesheet"/>
+    <link href="assets/css/common/utils.css" rel="stylesheet"/>
+
+    <link href="assets/images/barcode/favicon.ico" rel="shortcut icon"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <meta name="keywords" content="Fooble, Barcode, Barcode Generator"/>
+    <meta name="description"
+          content="Generate barcodes using an online API. Choose a barcode type, adjust size, and export instantly."/>
+
+    <title>Barcode Generator</title>
+</head>
+<body>
+<div id="mobile-nav-overlay"></div>
+
+<nav>
+    <div class="items">
+        <a href="qr-code.html"><i class="ri-qr-code-line"></i> QR Code</a>
+        <a class="selected" href="barcode.html"><i class="ri-barcode-line"></i> Barcode</a>
+        <a href="css-gradient.html"><i class="ri-palette-line"></i> CSS Gradient</a>
+        <a href="password.html"><i class="ri-key-2-line"></i> Password</a>
+        <a href="timezone.html"><i class="ri-time-line"></i> Timezone</a>
+        <a href="roman-numeral.html"><i class="ri-hashtag"></i> Roman</a>
+    </div>
+
+    <p class="mobile-text">Fooble Tools</p>
+    <button class="mobile-nav-toggle">
+        <i class="ri-gallery-view-2"></i>
+    </button>
+</nav>
+
+<main>
+    <div class="card">
+        <h1>Barcode Generator</h1>
+
+        <div class="barcode-generator">
+            <div class="settings form">
+                <div class="input-box">
+                    <label for="barcode-type">Barcode Type</label>
+                    <select id="barcode-type"></select>
+                </div>
+
+                <div class="input-box">
+                    <label for="barcode-input">Value</label>
+                    <input
+                            id="barcode-input"
+                            type="text"
+                            placeholder="FOOBLE-123"
+                            autocomplete="off"
+                    />
+                </div>
+
+                <div class="input-box">
+                    <label for="barcode-scale">Scale: 3x</label>
+                    <input
+                            id="barcode-scale"
+                            type="range"
+                            min="1"
+                            max="6"
+                            value="3"
+                    />
+                </div>
+
+                <div class="input-box">
+                    <label for="barcode-height">Height: 12px</label>
+                    <input
+                            id="barcode-height"
+                            type="range"
+                            min="8"
+                            max="30"
+                            value="12"
+                    />
+                </div>
+
+                <div class="input-box">
+                    <label>
+                        <input id="include-text" type="checkbox" checked/> Show text
+                    </label>
+                </div>
+
+                <p class="status" id="status">Enter a value to generate a barcode...</p>
+
+                <div class="btns">
+                    <button class="btn" id="download-btn">
+                        <i class="ri-download-line"></i> Download
+                    </button>
+                    <button class="btn" id="copy-btn">
+                        <i class="ri-file-copy-line"></i> Copy
+                    </button>
+                    <button class="btn-outline" id="clear-btn">
+                        <i class="ri-refresh-line"></i> Clear
+                    </button>
+                </div>
+            </div>
+
+            <div class="preview">
+                <div class="barcode-wrapper">
+                    <img id="barcode-image" alt="Generated barcode"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script type="module" src="assets/js/barcode.js"></script>
+<script src="assets/js/common/nav.js"></script>
+</body>
+</html>

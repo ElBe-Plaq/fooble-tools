@@ -1,0 +1,55 @@
+:root {
+    --primary-color: #17984d;
+}
+
+.qr-generator {
+    display: flex;
+    gap: 60px;
+}
+
+.qr-generator .preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.qr-generator .preview .qr-code-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background-color: #f9fafb;
+    padding: 15px;
+    width: 250px;
+    height: 250px;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    .qr-generator {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 400px) {
+    main {
+        padding: 0 !important;
+    }
+
+    nav {
+        border-bottom: 1px solid #e0e0e0;
+        height: 59px;
+    }
+
+    .card {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: 100%;
+        min-height: calc(100dvh - 60px);
+    }
+}

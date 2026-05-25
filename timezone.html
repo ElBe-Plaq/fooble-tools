@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <!-- META -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-title" content="Fooble Timezone Converter"/>
+    <meta name="author" content="Fooble"/>
+    <meta http-equiv="content-language" content="en"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="revisit-after" content="2 days"/>
+
+    <link href="assets/css/common/fonts.css" rel="stylesheet"/>
+    <link href="assets/css/common/reset.css" rel="stylesheet"/>
+    <link href="assets/css/timezone.css" rel="stylesheet"/>
+    <link href="assets/css/common/utils.css" rel="stylesheet"/>
+
+    <link href="assets/images/timezone/favicon.ico" rel="shortcut icon"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <meta name="keywords" content="Fooble, Timezone, Timezone Converter"/>
+    <meta name="description"
+          content="Convert times between popular timezones. Select a date, time, and source timezone to see the matching time elsewhere."/>
+
+    <title>Timezone Converter</title>
+</head>
+<body>
+<div id="mobile-nav-overlay"></div>
+
+<nav>
+    <div class="items">
+        <a href="qr-code.html"><i class="ri-qr-code-line"></i> QR Code</a>
+        <a href="barcode.html"><i class="ri-barcode-line"></i> Barcode</a>
+        <a href="css-gradient.html"><i class="ri-palette-line"></i> CSS Gradient</a>
+        <a href="password.html"><i class="ri-key-2-line"></i> Password</a>
+        <a class="selected" href="timezone.html"><i class="ri-time-line"></i> Timezone</a>
+        <a href="roman-numeral.html"><i class="ri-hashtag"></i> Roman</a>
+    </div>
+
+    <p class="mobile-text">Fooble Tools</p>
+    <button class="mobile-nav-toggle">
+        <i class="ri-gallery-view-2"></i>
+    </button>
+</nav>
+
+<main>
+    <div class="card">
+        <h1>Timezone Converter</h1>
+
+        <div class="timezone-converter form">
+            <div class="inputs">
+                <div class="input-box">
+                    <label for="date-input">Date</label>
+                    <input id="date-input" type="date"/>
+                </div>
+
+                <div class="input-box">
+                    <label for="time-input">Time</label>
+                    <input id="time-input" type="time" step="60"/>
+                </div>
+
+                <div class="input-box">
+                    <label for="from-timezone">From Timezone</label>
+                    <select id="from-timezone"></select>
+                </div>
+
+                <div class="input-box">
+                    <label for="to-timezone">To Timezone</label>
+                    <select id="to-timezone"></select>
+                </div>
+            </div>
+
+            <p class="status" id="status">Choose a date and time to begin...</p>
+
+            <div class="output">
+                <div class="input-box">
+                    <label for="output">Converted Time</label>
+                    <input id="output" type="text" readonly/>
+                </div>
+                <p class="meta" id="meta"></p>
+            </div>
+
+            <div class="btns">
+                <button class="btn" id="now-btn">
+                    <i class="ri-time-line"></i> Now
+                </button>
+                <button class="btn" id="swap-btn">
+                    <i class="ri-swap-line"></i> Swap
+                </button>
+                <button class="btn" id="copy-btn">
+                    <i class="ri-file-copy-line"></i> Copy
+                </button>
+                <button class="btn-outline" id="clear-btn">
+                    <i class="ri-refresh-line"></i> Clear
+                </button>
+            </div>
+
+            <div class="info">
+                <p class="title">Information</p>
+                <p>Daylight saving changes are handled automatically.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script type="module" src="assets/js/timezone.js"></script>
+<script src="assets/js/common/nav.js"></script>
+</body>
+</html>
+

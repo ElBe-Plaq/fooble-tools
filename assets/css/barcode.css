@@ -1,0 +1,93 @@
+:root {
+    --primary-color: #d97706;
+}
+
+.barcode-generator {
+    display: flex;
+    gap: 48px;
+}
+
+.barcode-generator .settings {
+    flex: 1;
+}
+
+.barcode-generator .preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.barcode-generator .preview .barcode-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background-color: #f8fafc;
+    padding: 20px;
+    width: 320px;
+    height: 160px;
+}
+
+.barcode-generator .preview img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.status {
+    min-height: 24px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #f4f6f8;
+    font-size: 0.9rem;
+    color: #3f4a5a;
+}
+
+.status.success {
+    background-color: #ecfdf3;
+    color: #067647;
+}
+
+.status.error {
+    background-color: #fef3f2;
+    color: #b42318;
+}
+
+.btns {
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+@media (max-width: 900px) {
+    .barcode-generator {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 475px) {
+    main {
+        padding: 0 !important;
+    }
+
+    nav {
+        border-bottom: 1px solid #e0e0e0;
+        height: 59px;
+    }
+
+    .card {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: 100%;
+        min-height: calc(100dvh - 60px);
+    }
+
+    .barcode-generator .preview .barcode-wrapper {
+        width: 100%;
+    }
+}

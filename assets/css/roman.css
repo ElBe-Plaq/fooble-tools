@@ -1,0 +1,78 @@
+:root {
+    --primary-color: #1b6ec2;
+}
+
+.converter {
+    min-width: 320px;
+    max-width: 560px;
+}
+
+.converter.form {
+    gap: 24px;
+}
+
+.converter .inputs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 20px;
+}
+
+.converter input[type="text"] {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.status {
+    min-height: 24px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #f4f6f8;
+    font-size: 0.9rem;
+    color: #3f4a5a;
+}
+
+.status.success {
+    background-color: #ecfdf3;
+    color: #067647;
+}
+
+.status.error {
+    background-color: #fef3f2;
+    color: #b42318;
+}
+
+.btns {
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 640px) {
+    .converter .inputs {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 475px) {
+    main {
+        padding: 0 !important;
+    }
+
+    nav {
+        border-bottom: 1px solid #e0e0e0;
+        height: 59px;
+    }
+
+    .card {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: 100%;
+        min-height: calc(100dvh - 60px);
+    }
+}
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <!-- META -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-title" content="Fooble Roman Numeral Converter"/>
+    <meta name="author" content="Fooble"/>
+    <meta http-equiv="content-language" content="en"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="revisit-after" content="2 days"/>
+
+    <link href="assets/css/common/fonts.css" rel="stylesheet"/>
+    <link href="assets/css/common/reset.css" rel="stylesheet"/>
+    <link href="assets/css/roman.css" rel="stylesheet"/>
+    <link href="assets/css/common/utils.css" rel="stylesheet"/>
+
+    <link href="assets/images/roman/favicon.ico" rel="shortcut icon"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <meta name="keywords" content="Fooble, Roman Numeral, Roman Numeral Converter"/>
+    <meta name="description"
+          content="Convert between decimal numbers and Roman numerals instantly. This tool validates inputs, supports standard Roman numeral rules, and provides quick copy actions."/>
+
+    <title>Roman Numeral Converter</title>
+</head>
+<body>
+<div id="mobile-nav-overlay"></div>
+
+<nav>
+    <div class="items">
+        <a href="qr-code.html"><i class="ri-qr-code-line"></i> QR Code</a>
+        <a href="barcode.html"><i class="ri-barcode-line"></i> Barcode</a>
+        <a href="css-gradient.html"><i class="ri-palette-line"></i> CSS Gradient</a>
+        <a href="password.html"><i class="ri-key-2-line"></i> Password</a>
+        <a href="timezone.html"><i class="ri-time-line"></i> Timezone</a>
+        <a class="selected" href="roman-numeral.html"><i class="ri-hashtag"></i> Roman</a>
+    </div>
+
+    <p class="mobile-text">Fooble Tools</p>
+    <button class="mobile-nav-toggle">
+        <i class="ri-gallery-view-2"></i>
+    </button>
+</nav>
+
+<main>
+    <div class="card">
+        <h1>Roman Numeral Converter</h1>
+
+        <div class="converter form">
+            <div class="inputs">
+                <div class="input-box">
+                    <label for="decimal-input">Number (1 - 3999)</label>
+                    <input
+                            id="decimal-input"
+                            type="number"
+                            min="1"
+                            max="3999"
+                            placeholder="2024"
+                            inputmode="numeric"
+                    />
+                </div>
+
+                <div class="input-box">
+                    <label for="roman-input">Roman Numeral</label>
+                    <input
+                            id="roman-input"
+                            type="text"
+                            placeholder="MMXXIV"
+                            autocapitalize="characters"
+                            spellcheck="false"
+                    />
+                </div>
+            </div>
+
+            <p class="status" id="status">Enter a value to begin.</p>
+
+            <div class="btns">
+                <button class="btn" id="copy-number">
+                    <i class="ri-file-copy-line"></i> Copy Number
+                </button>
+                <button class="btn" id="copy-roman">
+                    <i class="ri-file-copy-line"></i> Copy Roman
+                </button>
+                <button class="btn-outline" id="clear-btn">
+                    <i class="ri-refresh-line"></i> Clear
+                </button>
+            </div>
+
+            <div class="info">
+                <p class="title">Important Rule</p>
+                <p>Supports standard Roman numerals from 1 to 3999.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script type="module" src="assets/js/roman.js"></script>
+<script src="assets/js/common/nav.js"></script>
+</body>
+</html>
+
