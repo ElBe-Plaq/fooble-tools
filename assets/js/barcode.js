@@ -33,8 +33,8 @@ function getSelectedType() {
     return BARCODE_TYPES.find((type) => type.id === typeSelect.value);
 }
 
-function updatePlaceholder(type) {
-    valueInput.placeholder = type.example;
+function initializeDummyValue(type) {
+    valueInput.value = type.example;
 }
 
 function updateBarcode() {
@@ -42,10 +42,7 @@ function updateBarcode() {
     const validation = validateBarcodeText(type, valueInput.value);
 
     if (!validation.valid) {
-        barcodeImg.style.opacity = "0.3";
-        barcodeImg.removeAttribute("src");
-        currentBarcode = null;
-        setStatus(validation.message, "error");
+        clearAll();
         return;
     }
 
@@ -126,9 +123,8 @@ async function copyBarcode() {
 
 function clearAll() {
     valueInput.value = "";
-    barcodeImg.removeAttribute("src");
     barcodeImg.style.opacity = "0.3";
-    currentBarcode = null;
+    barcodeImg.alt = "No data";
     setStatus("Enter a value to generate a barcode...");
 }
 
@@ -140,14 +136,14 @@ BARCODE_TYPES.forEach((type) => {
 });
 
 typeSelect.value = BARCODE_TYPES[0].id;
-updatePlaceholder(getSelectedType());
+initializeDummyValue(getSelectedType());
 updateScaleLabel();
 updateHeightLabel();
-setStatus("Enter a value to generate a barcode...");
+updateBarcode();
 
 valueInput.addEventListener("input", updateBarcode);
 typeSelect.addEventListener("change", () => {
-    updatePlaceholder(getSelectedType());
+    initializeDummyValue(getSelectedType());
     valueInput.value = normalizeBarcodeText(getSelectedType(), valueInput.value);
     updateBarcode();
 });
