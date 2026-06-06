@@ -40,13 +40,16 @@ function initializeDummyValue(type) {
 function updateBarcode() {
     const type = getSelectedType();
     const validation = validateBarcodeText(type, valueInput.value);
+    const normalized = validation.normalized;
 
     if (!validation.valid) {
-        clearAll();
+        barcodeImg.style.opacity = "0.3";
+        barcodeImg.alt = "No data";
+
+        setStatus(validation.message, normalized ? "error" : "");
         return;
     }
 
-    const normalized = validation.normalized;
     if (normalized !== valueInput.value) {
         valueInput.value = normalized;
     }
